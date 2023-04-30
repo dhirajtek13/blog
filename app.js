@@ -57,11 +57,12 @@ app.get("/posts/:postName", function(req, res) {
   const reqestedTitle = req.params.postName;
   posts.forEach(function(post){
     if(_.lowerCase(post.title) === _.lowerCase(reqestedTitle)){//lodash will compare with lowercase and spaces
-      console.log("match found");
+      // console.log("match found");
+      // const blog = {title: post.title, content: post.content}
+      res.render("post", {title: post.title, content: post.content});
     }
   })
 })
-
 
 
 
